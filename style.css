@@ -58,6 +58,9 @@ header {
             width: 64px;
             margin-right: 20px;
             border-radius: 50%;
+            img {
+                border-radius: 50%;
+            }
         }
         .logo-text {
             flex: 1;
@@ -196,6 +199,22 @@ h1 {
         flex-direction: column;
         justify-content: center;
 
+        h1 {
+            .text {
+                display: inline-block;
+                position: relative;
+            }
+            .text::after {
+                content: '';
+                border-left: 2px solid black;
+                height: 100%;
+                width: 100%;
+                left: 0;
+                position: absolute;
+                background-color: var(--blue-100);
+                animation: typing 3s steps(10) infinite;
+            }
+        }
         span {
             @media (max-width: 1024px) {
                 display: none;
@@ -232,6 +251,16 @@ h1 {
             max-width: 420px;
 
         }
+    }
+}
+
+@keyframes typing {
+    40%, 60% { 
+        left: 100%;
+        width: 10%;
+    }
+    100% {
+        left: 0;
     }
 }
 
@@ -331,8 +360,8 @@ h3 {
     }
 }
 
-.work-experience {
-    .jobs {
+.education {
+    .edu {
         display: flex;
         gap: 30px;
         @media (max-width: 1024px) {
